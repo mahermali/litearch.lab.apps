@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using StackExchange.Redis;
 
@@ -15,6 +16,7 @@ namespace LiteArch.Lab.Apps.Api
         }
         public async Task Seed(string key)
         {
+            Console.WriteLine($"Seeding: {Environment.MachineName} --> {_database.StringGet(key)}");
             _database.StringIncrement(key);
         }
     }
