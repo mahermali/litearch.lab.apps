@@ -15,5 +15,5 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: maherali/litearch
-          file: Dockerfile.Seeder
+          dockerfile: Dockerfile.Seeder
           tag_with_ref: true
