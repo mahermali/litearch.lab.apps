@@ -27,7 +27,7 @@ namespace LiteArch.Lab.Apps.Seeder
             while (!cancellationToken.IsCancellationRequested)
             {
                 Console.WriteLine($"Seeding: {++_lastId}");
-                await _client.PostAsJsonAsync("api/seed", new
+                await _client.PostAsJsonAsync("seed", new
                 {
                     Key=Environment.MachineName
                 }, cancellationToken);
