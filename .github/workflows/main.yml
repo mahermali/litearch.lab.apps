@@ -25,6 +25,6 @@ jobs:
         with:
           push: true
           file: ./Dockerfile.Seeder
-          tags: maherali/litearch-lab-seeder:latest maherali/litearch-lab-seeder:$BUILD_NUMBER
+          tags: maherali/litearch-lab-seeder:latest maherali/litearch-lab-seeder:${{ github.run_number }}
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
