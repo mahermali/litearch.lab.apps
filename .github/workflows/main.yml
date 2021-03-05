@@ -1,0 +1,19 @@
+name: Build And Publish Docker Images
+on:
+  release:
+    types: [published]
+jobs:
+  push_to_registry:
+    name: LiteArch.Apps.Seeder
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: maherali/litearch
+          file: Dockerfile.Seeder
+          tag_with_ref: true
