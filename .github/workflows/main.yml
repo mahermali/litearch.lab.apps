@@ -16,7 +16,6 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          # list of Docker images to use as base name for tags
           images: |
             maherali/litearch-lab-seeder
           tag-sha: true
@@ -33,6 +32,6 @@ jobs:
         with:
           push: true
           file: ./Dockerfile.Seeder
-          tags: ${{ steps.docker_meta.outputs.tags }}
+          tags: litearch-lab-seeder:latest
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
